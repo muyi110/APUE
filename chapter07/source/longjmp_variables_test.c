@@ -30,7 +30,6 @@ int main(void)
     globval = 95, autoval = 96, regival = 97, volaval = 98, statval = 99;
     f1(autoval, regival, volaval, statval);
     exit(0);
-    exit(0);
 }
 
 static void f1(int i, int j, int k, int l)

@@ -21,13 +21,18 @@ int main(void)
         if((pid = fork()) < 0)
             err_sys("fork error");
         else if(pid > 0)
+        {
+            printf("first child !!\n");
             exit(0);
-
+        }
         sleep(2);
         printf("second child, parent pid = %ld\n", (long)getppid());
         exit(0);
     }
+    printf("father\n");
     if(waitpid(pid, NULL, 0) != pid)
         err_sys("waitpid error");
+    printf("WNOHANG: %d\n", WNOHANG);
+    printf("WCONTINUED: %d\n", WCONTINUED);
     exit(0);
 }

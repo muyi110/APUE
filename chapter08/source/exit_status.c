@@ -33,6 +33,7 @@ int main(void)
         exit(7);
     if(wait(&status) != pid)
         err_sys("wait error");
+    printf("status: %x\n", status);
     pr_exit(status);
 
     if((pid = fork()) < 0)
